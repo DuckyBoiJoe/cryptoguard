@@ -3,7 +3,6 @@ const app = new Discord.Client();
 const fs = require('fs');
 const pac = require('./package.json');
 const config = JSON.parse(fs.readFileSync("./config.json", "utf8"))
-const token = 'NzI2MTIxMjYzOTU3MDE2NjQ5.XvYrJg.lWanOuJMdRKFzivS36LmK2QcE-0'
 const db = JSON.parse(fs.readFileSync("./servers.json", "utf8"))
 
 app.on('ready', () => {
@@ -170,4 +169,4 @@ app.on('message', message => {
     })
 })
 
-app.login(token)
+app.login(process.env.BOT_TOKEN)
